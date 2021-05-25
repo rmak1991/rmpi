@@ -1,1 +1,1 @@
-# rmpi
+# Information about rmpi project

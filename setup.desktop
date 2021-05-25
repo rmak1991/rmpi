@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=rmpi
+Comment=Setup rmpi website
+Exec=/home/pi/Desktop/rmpi/run.sh
+Icon=/home/pi/Desktop/rmpi/lib/icon/icon.png
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Application;
+StartupNotify=true
