@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=RMConfig
+Comment[en_US]=Setup rmpi website
+Exec=/usr/bin/python3 /home/pi/Desktop/rmpi-master/Automation/Config/autoapp.py
+Icon=/home/pi/Desktop/rmpi-master/Automation/Pics/inst.png
+Terminal=false
+MultipleArgs=false
+Type=Application
+Categories=Application;
+StartupNotify=true
+Name[en_US]=RMConfig

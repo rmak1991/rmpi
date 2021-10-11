@@ -1,15 +1,16 @@
 #!/usr/bin/python
 
-import os, sys, time
+import os, sys, time,math
 from Lib.T_DateTime import getDateTime
 from Lib.T_Thresholds import *
 from Lib.T_FileHandler import *
 from Lib.T_Logs import LOG as l
+from Lib.T_Global import PATHS as _P
 from Jobs.J_CheckServices import runServiceCheck
 from subprocess import Popen, PIPE
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SCRIPT = __file__.split(".")[0]
-
+    
 def TTH():
     _THRESHOLDS={}
     _THRESHOLDS[0]="REBOOT"
@@ -32,11 +33,14 @@ def RUN_TTH_CHECK():
 #          if entry.path.endswith(".TTH") and entry.is_file():
 #              pass
 #
-
+def checklogsize():
+    num = round(FILE_SIZE("logs.log",_P.LOGS_PATH)/math.pow(1024,2),2)
+    if num>50:
+        FILE_DELETE("logs.log",_P.LOGS_PATH)
 def RUN_PROCESS():
     _DATE = getDateTime()
-    runServiceCheck(_DATE)
-    a = TTH()
+    runServiceCheck()
+    checklogsize()
     print("autoprocess ran")
 #     if THRESHOLD_CODE_CHECK(a[10],2):
 #         print(True)

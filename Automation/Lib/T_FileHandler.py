@@ -87,4 +87,8 @@ def FILE_DELETE(filename,path):
     l(SCRIPT,FILE_CONTENT_CHECK.__name__,"function called")
     _PATH= path+"/"+filename
     os.remove(_PATH)
-        
+def FILE_SIZE(filename,path):
+    '''file size'''
+    l(SCRIPT,FILE_CONTENT_CHECK.__name__,"function called")
+    _PATH= path+"/"+filename
+    return os.path.getsize(_PATH)

@@ -7,6 +7,7 @@ CHANGE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(CHANGE_PATH)
 from Lib.T_Global import PATHS as _P
 from Lib.T_Global import colors as _cc
+from Lib.T_DateTime import getDateTime
 
 dic={}
 dic["apache2.service"] = {}
@@ -63,8 +64,9 @@ def getTemp2():
         raise subprocess.CalledProcessError(return_code, args)    
     return txt.replace("temp=","").split("'")[0]
 
-def runServiceCheck(date): 
-    str1 = "Autoprocess last ran at : "+str(date)      
+def runServiceCheck():
+    _DATE = getDateTime()
+    str1 = "Autoprocess last ran at : "+str(_DATE)      
     setBackground(str1)            
 def setBackground(APlastrun):
     img =Image.new('RGB',(1920,1080),"#1b1e23")
