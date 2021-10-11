@@ -1150,3 +1150,10 @@
 10-11-2021-07-10-50-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: dt_String :10/11/2021 07:10:50 AM
 10-11-2021-07-10-50-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: constructDate: 10-11-2021-07-10-50-AM
 10-11-2021-07-10-51-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_FileHandler.FILE_CONTENT_CHECK: function called
+10-11-2021-07-11-21-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: getDateTime function called
+10-11-2021-07-11-21-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: dt_String :10/11/2021 07:11:21 AM
+10-11-2021-07-11-21-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: constructDate: 10-11-2021-07-11-21-AM
+10-11-2021-07-11-21-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: getDateTime function called
+10-11-2021-07-11-21-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: dt_String :10/11/2021 07:11:21 AM
+10-11-2021-07-11-21-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_DateTime.getDateTime: constructDate: 10-11-2021-07-11-21-AM
+10-11-2021-07-11-22-AM@/home/pi/Desktop/rmpi-master/Automation/Lib/T_FileHandler.FILE_CONTENT_CHECK: function called
