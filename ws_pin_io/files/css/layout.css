@@ -1,0 +1,296 @@
+.box {
+	height: 642px;
+	width: 400px;
+	border-style: solid;
+	border-radius: 20px;
+	margin-top: 30px;
+	margin-left: 31px;
+}
+
+.row {
+	border-radius: 20px;
+	height: 30px;
+	margin: 2px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.inforow {
+	border-radius: 20px;
+	height: 30px;
+	margin: 2px;
+	display: flex;
+}
+
+.item1 {
+	height: 30px;
+	width: 120px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.item2 {
+	height: 30px;
+	width: 120px;
+	border-radius: 20px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.circle {
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	border-style: solid;
+	border-radius: 30px;
+	border-width: 1px;
+	background-color: white;
+}
+
+.item1>.circle {
+	margin-right: 5px;
+}
+
+.item2>.circle {
+	margin-left: 5px;
+}
+
+.infoitem {
+	margin-left: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-family: sans-serif;
+	width: 74px;
+}
+
+.text>p {
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 14px;
+}
+
+.isgpio {
+	background-color: #ffd0d0;
+	font-weight: bold;
+}
+
+.settings {
+	height: 642px;
+	width: 400px;
+	border-style: solid;
+	border-radius: 20px;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+}
+
+
+.title {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	box-shadow: 1px 1px 5px 0px black;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.title>p {
+	margin: 0;
+}
+
+.settings_contents {
+	padding: 10px;
+}
+
+.settings_row {
+	display: flex;
+	height: 30px;
+	margin-top: 2px;
+}
+
+.settings_item {
+	margin-left: 13px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	font-family: sans-serif;
+	width: 74px;
+}
+
+.settings_row>:first-child {
+	justify-content: flex-end;
+}
+
+.functions {
+	width: 280px;
+	display: block;
+	overflow-wrap: break-word;
+	padding-top: 30px;
+}
+
+.control_item {}
+
+.controls {
+	height: 75px;
+	align-items: center;
+	padding-left: 30px;
+}
+
+.controls>:first-child {
+	margin-right: 30px;
+}
+
+.selectedgpio {
+	background-color: blue;
+}
+
+body {
+	user-select: none;
+}
+
+.info_content {
+	padding: 10px;
+}
+
+.navbox {
+	height: 100px;
+	box-shadow: 0px 0px 3px 0px black;
+}
+
+.nav_row {
+	height: 50px;
+	display: flex;
+}
+
+.navitem {
+	height: 50px;
+	width: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logobox {
+	width: 100px;
+	background-color: #ececec;
+	border-right-style: solid;
+	border-right-color: #dad8d8;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+	letter-spacing: 8px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #2f3a52;
+	cursor: pointer;
+}
+
+.btm_ln {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #dad8d8;
+}
+
+.logobox>p {
+	margin: 0;
+}
+
+.navitem_btn {
+	cursor: pointer;
+	border-color: #dad8d8;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1px;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	box-shadow: 0px 2px 1px 0px #dad8d8;
+}
+
+.navitem_btn:hover {
+	background-color: #ececec;
+}
+
+.btn_text {
+	font-family: sans-serif;
+	font-size: 14px;
+	padding-left: 3px;
+}
+
+.confirmbox {
+	height: 90px;
+	width: 150px;
+	background-color: white;
+	position: absolute;
+	margin-top: 135px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 2px black;
+	font-family: sans-serif;
+	display: none;
+}
+
+.cboxtitle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 45px;
+}
+
+.cboxtitle>p {
+	margin: 0;
+}
+
+.cbox_contents {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 45px;
+}
+
+.cbox_option {}
+
+.cbox_option>button {
+	background-color: white;
+	border-style: none;
+	border-radius: 10px;
+	box-shadow: 0px 0px 3px #6b6b6b;
+	height: 30px;
+	width: 55px;
+	cursor: pointer;
+	outline: none;
+}
+.training_row{
+    height: 100px;
+    box-shadow: 0px 0px 5px black;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.training_container{
+    padding: 10px;
+}
+.command_title{
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding: 5px;
+    border-top-left-radius: 10px;
+}

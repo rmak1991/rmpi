@@ -1,0 +1,12 @@
+[Unit]
+Description=<project description>
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/Desktop/rmpi-master/Automation/
+ExecStart=/usr/bin/python3 /home/pi/Desktop/rmpi-master/Automation/autoprocess.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
