@@ -92,3 +92,13 @@ def FILE_SIZE(filename,path):
     l(SCRIPT,FILE_CONTENT_CHECK.__name__,"function called")
     _PATH= path+"/"+filename
     return os.path.getsize(_PATH)
+def FILES_NAME_PATTERN(path,**kwargs):
+    '''check if file exists with pattern'''
+    starts_with = kwargs.get('starts_with', "")
+    ends_with = kwargs.get('ends_with', "")
+    contains = kwargs.get('contains', "")
+    filelist = []
+    for entry in os.scandir(path):
+        if entry.name.endswith(ends_with) and entry.name.startswith(starts_with) and (contains in entry.name) and entry.is_file():
+            filelist.append(entry.name)
+    return filelist;

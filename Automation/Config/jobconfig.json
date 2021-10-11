@@ -1,0 +1,15 @@
+{
+	"Stock":{"parentID":[0],"type"="main","id"=1233},
+	"Nasdaq":{"parentID":[1233],"type"="skd","id"=12},
+	"AMEX":{"parentID":[1233]"type"="skd","id"=32},
+	"NYSE":{"parentID":[1233],"type"="skd","id"=43},
+	"NASDOWN":{parentID:[12],"type"="job","id"=56},
+	"NASexr":{parentID:[12],"type"="job","id"=76},
+	"NASDOWNarc":{parentID:[12],"type"="job","id"=45},
+	"AMEXDOWN":{parentID:[43],"type"="job","id"=7},
+	"AMEXexr":{parentID:[43],"type"="job","id"=87},
+	"AMEXarc":{parentID:[43],"type"="job","id"=67},
+	"NYSEDOWN":{parentID:[43],"type"="job","id"=456},
+	"NYSEexr":{parentID:[43],"type"="job","id"=675},
+	"NYSEarc":{parentID:[43],"type"="job","id"=4567}
+	}

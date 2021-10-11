@@ -1,44 +1,15 @@
 #! /usr/bin/python3
 from tkinter import *
-import tkinter.messagebox,os
+import tkinter.messagebox,os,sys
 from threading import *
 from pathlib import Path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from Lib.T_FileHandler import *
 from Lib.T_Logs import LOG as l
 from Lib.T_Global import PATHS as _P
 
 import subprocess, pexpect, math, types, time, os, sys
-def donothing():
-   filewin = Toplevel(root)
-   button = Button(filewin, text="Do nothing button")
-   button.pack()
-   
-
-def get_menu(root):
-    menubar = Menu(root)
-    filemenu = Menu(menubar, tearoff=0)
-    filemenu.add_command(label="New", command=donothing)
-    filemenu.add_command(label="Open", command=donothing)
-    filemenu.add_command(label="Save", command=donothing)
-    filemenu.add_command(label="Save as...", command=donothing)
-    filemenu.add_command(label="Close", command=donothing)
-    filemenu.add_separator()
-    filemenu.add_command(label="Exit", command=root.quit)
-    menubar.add_cascade(label="File", menu=filemenu)
-    editmenu = Menu(menubar, tearoff=0)
-    editmenu.add_command(label="Undo", command=donothing)
-    editmenu.add_separator()
-    editmenu.add_command(label="Cut", command=donothing)
-    editmenu.add_command(label="Copy", command=donothing)
-    editmenu.add_command(label="Paste", command=donothing)
-    editmenu.add_command(label="Delete", command=donothing)
-    editmenu.add_command(label="Select All", command=donothing)
-    menubar.add_cascade(label="Edit", menu=editmenu)
-    helpmenu = Menu(menubar, tearoff=0)
-    helpmenu.add_command(label="Help Index", command=donothing)
-    helpmenu.add_command(label="About...", command=donothing)
-    menubar.add_cascade(label="Help", menu=helpmenu)
-    return menubar
 
 def run_main():
     window=Tk()
@@ -50,19 +21,24 @@ def run_main():
     #pos_x=int((sc_w-win_w)/2)
     #pos_y=int((sc_h-win_h)/2)
     window.geometry(str(win_w)+"x"+str(win_h))
-    #window.resizable(False, False)
-    frame_left = Frame(window, bg="#001f3f")
-    frame_left.pack(side=LEFT, fill="y")
-    title_lable = Label(frame_left,font='Helvetica 18 bold', text="Header", fg="#80bfff",width=8,height=2).pack()
-    title_lable.pack()
-#     frame_left = Frame(window, bg="#001f3f")
-#     frame_left.pack(side=LEFT,fill="y")
-#     btn1 = Button(frame_left,text="Create")
-#     btn1.pack()
+    window.resizable(False, False)
+    frame_top = Frame(window, bg="",height=80)
+    frame_top.pack(fill="x")
+    frame_top.pack_propagate(0)
+    
+    variable = StringVar(window)
+    variable.set("one")
+    optionmenu = OptionMenu(frame_top,variable, "one", "two", "three")
+    optionmenu.config(width=30)
+    optionmenu.config(height=200)
 
-    tkinter.messagebox.showinfo("Congratulations", "You won!")
+    optionmenu.pack(side=LEFT,padx=(10,10),pady=(10,10))
+
+    Entry(frame_top).pack(side=LEFT,padx=(30,30),pady=(30,30))
+
+
+    #tkinter.messagebox.showinfo("Congratulations", "You won!")
     #window.overrideredirect(1)
-    window.config(menu=get_menu(window))
     window.mainloop()
-#run_main()
+run_main()
 

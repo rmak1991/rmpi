@@ -16,3 +16,4 @@ def reboot():
     THRESHOLD_SET(_TTH,_TTH_CODE)
     if THRESHOLD_CODE_CHECK(_TTH,_TTH_CODE):
         os.system('sudo shutdown -r now')
+reboot()
