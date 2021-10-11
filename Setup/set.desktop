@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Install
 Comment[en_US]=Setup rmpi website
-Exec=/usr/bin/python3 /home/pi/Desktop/rmpi-master/autoinstall.py
+Exec=/usr/bin/python3 /home/pi/Desktop/rmpi-master/Setup/autoinstall.py
 Icon=/home/pi/Desktop/rmpi-master/Automation/Pics/inst.png
 Terminal=false
 MultipleArgs=false

@@ -5,6 +5,7 @@ class PATHS():
     __APPPATH = "/home/pi/Desktop"
     RMPI_MASTER_PATH =__APPPATH+"/rmpi-master" 
     AUTOMATION_PATH =RMPI_MASTER_PATH+"/Automation"
+    SETUP_PATH =RMPI_MASTER_PATH+"/Setup"
     DATA_PATH = AUTOMATION_PATH+"/Data"
     DATA_ARCHIVE_PATH=AUTOMATION_PATH+"/Data/Archive"
     LIB_PATH=AUTOMATION_PATH+"/Lib"
@@ -26,6 +27,7 @@ class PATHS():
     SSHPATH="/home/pi/.ssh"
     PYTHONPATH ="/usr/bin/python3"
     JSON_SETUP_CONFIG = "setup_config.json"
+    SYSTEMSERVICESPATH="/etc/systemd/system/"
 class Internalvars():
     FLAG="flag.flag"
     ID_RSA = "id_rsa"
@@ -36,6 +38,7 @@ class Internalvars():
     ORIGIN= "rmak1991/rmpi.git"
     DBUSER="RMPIDBU"
     DBPASSWORD="rmpi2021"
+    RMPIAPP_SERVICE="RMPIAPP.service"
 class COMMAND_LISTS():
     __dic={}
     __dic["UP"]={}
@@ -43,6 +46,7 @@ class COMMAND_LISTS():
     __dic["MDB"]={}
     __dic["GIT"]={}
     __dic["PRE"]={}
+    __dic["Service"]={}
     __dic["PRE"]["0"] = [["sudo", "chmod","+x",PATHS.RMPI_MASTER_PATH],False,"Change rmpi-master mode to execute"]
     __dic["PRE"]["1"] = [["find", PATHS.RMPI_MASTER_PATH,"-executable"],False,"Check rmpi-master mode"]
     __dic["PRE"]["2"] = [["sudo", "chown","pi",PATHS.CRONTABPATH],False,"Change crontabs owner to pi"]
@@ -93,7 +97,11 @@ class COMMAND_LISTS():
     __dic["MDB"]["4"] = "sudo mysql -u root -p -e \"FLUSH PRIVILEGES\""
     __dic["MDB"]["5"] = "sudo mysql -u root -p -e \"Create database RMPIDB\""
     __dic["MDB"]["6"] = [["pip3","install","mariadb"],False,"Installing Maria database connector for python"]
-    
+    __dic["Service"]["0"] = [["sudo","cp",PATHS.SETUP_PATH+"/"+Internalvars.RMPIAPP_SERVICE,PATHS.SYSTEMSERVICESPATH],False,"Copy RMPIAPP.service file"]
+    __dic["Service"]["1"] = [["sudo","systemctl","daemon-reload"],False,"Reload systemd manager configuration"]
+    __dic["Service"]["2"] = [["sudo","systemctl","start",Internalvars.RMPIAPP_SERVICE],False,"Start RMPIAPP.service"]
+    __dic["Service"]["3"] = [["sudo","systemctl","enable",Internalvars.RMPIAPP_SERVICE],False,"Enable RMPIAPP.service"]
+    __dic["Service"]["4"] = [["sudo","systemctl","status",Internalvars.RMPIAPP_SERVICE],False,"Status RMPIAPP.service"]
     dic=__dic
 class COMMANDS():
     CRONJOB_DailyReport=PATHS.PYTHONPATH+" "+PATHS.JOBS_PATH+"/J_DailyReport.py >> ~/cron.log 2>&1"
@@ -121,6 +129,7 @@ class init():
         __dic["GIT"]={}
         __dic["PRE"]={}
         __dic["NC"]={}
+        __dic["Service"]={}
         __dic["PRE"]["0"] = [val,"Change rmpi-master mode to execute"]
         __dic["PRE"]["1"] = [val,"Check rmpi-master mode"]
         __dic["PRE"]["2"] = [val,"Change crontabs owner to pi"]
@@ -163,6 +172,11 @@ class init():
         __dic["MDB"]["6"] = [val,"Installing Maria database connector for python"]
         __dic["NC"]["0"] = [val,"Adding crontab"]
         __dic["NC"]["1"] = [val,"Adding script path to RCLOCAL"]
+        __dic["Service"]["0"] = [val,"Copy RMPIAPP.service file"]
+        __dic["Service"]["1"] = [val,"Reload systemd manager configuration"]
+        __dic["Service"]["2"] = [val,"Start RMPIAPP.service"]
+        __dic["Service"]["3"] = [val,"Enable RMPIAPP.service"]
+        __dic["Service"]["4"] = [val,"Status RMPIAPP.service"]
         return __dic
 
 # lambda x: f() if 2==2 else False

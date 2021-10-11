@@ -3,14 +3,13 @@ from tkinter import *
 from threading import *
 from pathlib import Path
 import subprocess, pexpect, math, types, time, os, sys, json
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Automation.Lib.T_CronTab import CronTab
 from Automation.Lib.T_Global import PATHS as _P
 from Automation.Lib.T_Global import COMMAND_LISTS as _CL
 from Automation.Lib.T_Global import COMMANDS as _C
 from Automation.Lib.T_Global import colors as _color
 from Automation.Lib.T_Global import init as _init
-
 import Automation.Lib.T_FileHandler as FH
 close_btn = Button
 start_btn = Button
@@ -25,20 +24,20 @@ arr={}
 widget_h = 2
 window = Tk
 web_folder=""
-#FH.FILE_WRITE_OVERWRITE(_P.JSON_SETUP_CONFIG,_P.RMPI_MASTER_PATH,json.dumps(_init.config_json(True)))
+#FH.FILE_WRITE_OVERWRITE(_P.JSON_SETUP_CONFIG,_P.SETUP_PATH,json.dumps(_init.config_json(False)))
 def gc(val1,val2):
-    t = FH.FILE_READ(_P.JSON_SETUP_CONFIG,_P.RMPI_MASTER_PATH)
+    t = FH.FILE_READ(_P.JSON_SETUP_CONFIG,_P.SETUP_PATH)
     res = json.loads(t)
     return res[val1][val2][0]
 def gcv(val1,val2):
-    t = FH.FILE_READ(_P.JSON_SETUP_CONFIG,_P.RMPI_MASTER_PATH)
+    t = FH.FILE_READ(_P.JSON_SETUP_CONFIG,_P.SETUP_PATH)
     res = json.loads(t)
     return res[val1][val2][1]
 def uc(val1,val2,valtoupdate):
-    t = FH.FILE_READ(_P.JSON_SETUP_CONFIG,_P.RMPI_MASTER_PATH)
+    t = FH.FILE_READ(_P.JSON_SETUP_CONFIG,_P.SETUP_PATH)
     res = json.loads(t)
     res[val1][val2][0]=valtoupdate
-    FH.FILE_WRITE_OVERWRITE(_P.JSON_SETUP_CONFIG,_P.RMPI_MASTER_PATH,json.dumps(res))
+    FH.FILE_WRITE_OVERWRITE(_P.JSON_SETUP_CONFIG,_P.SETUP_PATH,json.dumps(res))
 def wtlb(text,**kwargs):
     global count
     fg = kwargs.get('fg', None)
@@ -136,6 +135,11 @@ def PRE_INSTALLATION():
     else:
         wtlb("SKIP:: "+gcv("NC","1"),fg=_color.SKIP)              
     execute(dic["PRE"]["5"],"PRE","5")
+    execute(dic["Service"]["0"],"Service","0")
+    execute(dic["Service"]["1"],"Service","1")
+    execute(dic["Service"]["2"],"Service","2")
+    execute(dic["Service"]["3"],"Service","3")
+    execute(dic["Service"]["4"],"Service","4")
 def run_installs():
     global close_btn,start_btn,count,dic
     count=0
