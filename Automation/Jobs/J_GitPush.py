@@ -14,6 +14,7 @@ def gitPush():
             child = pexpect.spawn("git push -u origin master")
             child.logfile_read = sys.stdout
             i= child.expect(["Are you sure you want to continue connecting","Enter passphrase"],timeout=5)
+            print(i)
             if i==0:
                 time.sleep(0.05)
 #                 child.sendline("yes")
