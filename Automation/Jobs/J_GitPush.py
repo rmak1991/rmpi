@@ -12,12 +12,12 @@ def gitPush():
 #         subprocess.run(["git push -f origin master"],shell=True,check=True,cwd=_P.RMPI_MASTER_PATH)
         try:
             child = pexpect.spawn("git push -u origin master")
-#             child.logfile_read = sys.stdout
-#             i= child.expect(["Are you sure you want to continue connecting","Enter passphrase"],timeout=5)
-#             if i==0:
-#                 time.sleep(0.05)
+            child.logfile_read = sys.stdout
+            i= child.expect(["Are you sure you want to continue connecting","Enter passphrase"],timeout=5)
+            if i==0:
+                time.sleep(0.05)
 #                 child.sendline("yes")
-#             #v= child.expect(["Are you sure you want to continue connecting","Enter passphrase"],timeout=5)
+            #v= child.expect(["Are you sure you want to continue connecting","Enter passphrase"],timeout=5)
         except:
             try:
                 pass
